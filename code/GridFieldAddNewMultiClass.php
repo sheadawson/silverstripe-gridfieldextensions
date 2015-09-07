@@ -157,7 +157,7 @@ class GridFieldAddNewMultiClass implements GridField_HTMLProvider, GridField_URL
 
 		GridFieldExtensions::include_requirements();
 
-		$field = new DropdownField(sprintf('%s[ClassName]', __CLASS__), '', $classes);
+		$field = new DropdownField(sprintf('%s_%s[ClassName]', __CLASS__, $grid->getName()), '', $classes);
 		if (Config::inst()->get('GridFieldAddNewMultiClass', 'showEmptyString')) {
 			$field->setEmptyString(_t('GridFieldExtensions.SELECTTYPETOCREATE', '(Select type to create)'));
 		}
